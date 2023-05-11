@@ -1,0 +1,12 @@
+<div class="card" *ngIf="(viewProduct$ | async) as viewProduct">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <span class="card-title">{{ viewProduct.title }}</span>
+      <span class="text-secondary">{{ viewProduct.price | currency }}</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <p>{{ viewProduct.description }}</p>
+    <img [src]="viewProduct.image" alt="viewProduct.title">
+  </div>
+</div>

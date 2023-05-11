@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">price</th>
+        <th scope="col">Photos</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products$ | async">
+        <th scope="row">{{ product.title }}</th>
+        <td>{{ product.price | currency }}</td>
+        <td><img [src]="product.image" [alt]="product.title"></td>
+        <td><a class="btn btn-info" (click)="viewProduct(product)">Details</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
